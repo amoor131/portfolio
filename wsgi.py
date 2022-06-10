@@ -1,6 +1,4 @@
-import sys
-import logging
-logging.basicConfig(stream=sys.stderr)
+from app import app
 
-from app import portfolio as application
-portfolio = application
+if __name__ == "__main__":
+    app.run()
