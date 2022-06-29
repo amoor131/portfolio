@@ -1,0 +1,5 @@
+Binary Search
+First Bad Version
+Search in Rotated Sorted Array
+Time Based Key-Value Store
+Maximum Profit in Job Scheduling

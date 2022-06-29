@@ -1,0 +1,149 @@
+/* makes divs on page flow downwards in order*/
+body{
+  display:flex;
+  flex-direction: column;
+  margin: auto;
+  font-family: 'Roboto', sans-serif;
+  background-color: rgb(20, 33, 61);
+}
+
+/* default no margin */
+h1, h2, h3, h4, h5, p, a{
+  margin:0px;
+}
+
+h1,h2{
+  pointer-events: none;
+}
+
+/* get rid of line under link */
+a{
+  text-decoration-line:none;
+}
+a:link{
+  color: white;
+}
+/* change color of text when hovering over it */
+a:hover{
+  color: rgb(252, 163, 17);
+}
+/* links look the same after visited*/
+a:visited{
+  color:white;
+}
+
+/* links in home-content should be black */
+a.category-links:visited{
+  color:black;
+}
+a.category-links:hover{
+  color: rgb(252, 163, 17);
+}
+a.category-links:link{
+  color: black;
+}
+
+.nav{
+  display:flex;
+  flex-wrap:wrap;
+  align-content: center;
+  justify-content: space-around;
+  max-width: 100%;
+  height:8vh;
+  color: white;
+}
+
+/* top welcome banner on home page*/
+.main-banner{
+  display:flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  height: 37vh;
+  background-color: rgb(229, 229, 229);
+  border-inline: 0px;
+  border-style: solid;
+  border-color: rgb(252, 163, 17);
+
+}
+
+/*  2x? grid that holds boxes with links to categories*/
+.solutions-grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 1fr 1fr;
+  row-gap: 5vh;
+  column-gap: 10vh;
+
+  /* center category boxes*/
+  margin: 10vh 10vw 10vh 10vw;
+
+}
+
+.main-content-links{
+    text-decoration-line:none;
+}
+/* change color of text when hovering over it */
+.main-content-links:hover{
+    color: rgb(252, 163, 17);
+}
+/* links look the same after visited*/
+.main-content-links:visited{
+  color:white;
+}
+
+.category{
+  display:grid;
+  grid-template-columns: auto;
+  grid-template-rows: 20% auto;
+  background-color: rgb(229, 229, 229);
+  /*box-shadow: 0px 0px 8px 0px rgb(28, 27, 27);*/
+  height: 20vh;
+  border-style:solid;
+  border-color: rgb(252, 163, 17);
+  /*border-color: rgb(255, 252, 247); */
+  grid-template-areas: "title title" "desc desc";
+}
+
+/* properties for content titles */
+.category-title{
+  grid-area:title;
+  align-self: center;
+  margin-left: 2vh;
+}
+
+/* places image on right side of each content grid */
+.category-img{
+  grid-area:img;
+  max-width: 20vh;
+}
+
+/* properties for content descriptions */
+.category-description{
+  grid-area:desc;
+  justify-content: center;
+  margin-left: 1vw;
+  margin-right: 2vw;
+}
+
+/* keep default cursor when hovering over paragraphs */
+p:hover{
+  
+}
+
+/* aligns links within description section of each content box */
+.category-links{
+  grid-area:desc;
+  align-self: end;
+  max-width: fit-content;
+  margin-left: 10%;
+  margin-right: 2vw;
+  margin-bottom: 2vh;
+}
+
+
+/* Settings for small screens 
+@media only screen and (max-wdith:700px){
+
+}
+*/

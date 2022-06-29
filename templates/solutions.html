@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony's Portfolio</title>
+    <link href="static/solutions.css" rel="stylesheet">
+    <!-- to user roboto font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Nav Bar-->
+    <div class="nav">
+        <a href="/"> Home </a>
+        <a href=""> About </a>
+        <a href=""> Contact</a>
+    </div>
+
+    <!-- Content-->
+    <div class="solutions-grid">
+        <script>
+            
+            function loadFile(filePath) {
+                var result = null;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", filePath, false);
+                xmlhttp.send();
+                if (xmlhttp.status == 200) {
+                    result = xmlhttp.responseText;
+                }
+                fillCategories(result);
+                //return result;
+            }
+
+            function fillCategories(contents) {
+                const collection = document.getElementsByClassName("category");
+                //iterate through category elements
+                //add title and solution links
+                for (var i = 0; i < collection.length; ++i){
+                    const cat = document.createElement('div');
+                    cat.classList.add('category-title')
+                    cat.textContent = "test";
+                    
+                    collection[i].appendChild(cat);
+                }
+
+                //element.textContent = contents;
+            }
+
+            function makeChild(cont) {
+                const cat = document.createElement('div');
+                cat.classList.add('category-title');
+                cat.textContent = cont;
+                const caat = document.getElementById('array');
+                caat.appendChild(cat);
+            }
+
+            window.onload = function() {
+                var cont = "hey";
+                makeChild(cont);
+                loadFile(solutions-topics.txt);
+            }
+        </script>
+
+        
+        <div class="category" id="array">
+            
+        </div>
+        <div class="category" id="string">
+            <a> </a>
+        </div>
+        <div class="category" id="tree">
+            <a> </a>
+        </div>
+        <div class="category" id="linked-list">
+            <a> </a>
+        </div>
+        <div class="category" id="stack">
+            <a> </a>
+        </div>
+        <div class="category" id="recusion">
+            <a> </a>
+        </div>
+        <div class="category" id="heap">
+            <a> </a>
+        </div>
+        <div class="category" id="graph">
+            <a> </a>
+        </div>
+        <div class="category" id="dynamic-programming">
+            <a> </a>
+        </div>
+        <div class="category" id="binary-search">
+            <a> </a>
+        </div>
+        <div class="category" id="binary-tree">
+            <a> </a>
+        </div>
+        <div class="category" id="binary-search-tree">
+            <a> </a>
+        </div>
+    </div>
+
+</body>
+
+</html>

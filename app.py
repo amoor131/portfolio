@@ -5,5 +5,13 @@ app = Flask(__name__)
 def home():
     return render_template("index.html")
 
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/solutions")
+def solutions():
+    return render_template("solutions.html")
+    
 if __name__ == "__main__":
-    app.run(host='0.0.0.0')
+    app.run(host='0.0.0.0', debug = True)
