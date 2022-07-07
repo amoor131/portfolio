@@ -1,182 +1,74 @@
-/* makes divs on page flow downwards in order*/
-body{
-  display:flex;
-  flex-direction: column;
-  margin: auto;
-  font-family: 'Roboto', sans-serif;
-  background-color: rgb(20, 33, 61);
-}
+porfolio.css
 
-/* default no margin */
-h1, h2, h3, h4, h5, p, a{
-  margin:0px;
-}
 
-h1,h2{
-  pointer-events: none;
-}
-
-/* get rid of line under link */
-a{
-  text-decoration-line:none;
-}
-a:link{
-  color: white;
-}
-/* change color of text when hovering over it */
-a:hover{
-  color: rgb(252, 163, 17);
-}
-/* links look the same after visited*/
-a:visited{
-  color:white;
-}
-
-/* links in home-content should be black */
-a.project-links:visited{
-  color:black;
-}
-a.project-links:hover{
-  color: rgb(252, 163, 17);
-}
-a.project-links:link{
-  color: black;
-}
-
-.nav{
-  display:flex;
-  flex-wrap:wrap;
-  align-content: center;
-  justify-content: space-around;
-  max-width: 100%;
-  height:8vh;
-  color: white;
-}
 
 /* top welcome banner on home page*/
 .main-banner{
-  display:flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  width: 100%;
-  height: 37vh;
+  display:grid;
   background-color: rgb(229, 229, 229);
   border-inline: 0px;
   border-style: solid;
   border-color: rgb(252, 163, 17);
-
 }
-
-/*  2x? grid that holds boxes with links to projects*/
+/* holds projects to link to on homepage */
 .home-grid{
   display:grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   row-gap: 5vh;
-  column-gap: 10vh;
-
   /* center project boxes*/
-  margin: 12.5vh 10vw 12.5vh 10vw;
-
+  margin: 2vh 2vw 2vh 2vw;
 }
-
-.main-content-links{
-    text-decoration-line:none;
-}
-/* change color of text when hovering over it */
-.main-content-links:hover{
-    color: rgb(252, 163, 17);
-}
-/* links look the same after visited*/
-.main-content-links:visited{
-  color:white;
-}
-
+/* grid for each project */
+/* has title, discription, picture, and links*/
 .main-content{
   display:grid;
-  grid-template-columns: auto 20vh;
-  grid-template-rows: auto 70%;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 5vh 5rom 5rom;
   background-color: rgb(229, 229, 229);
   /*box-shadow: 0px 0px 8px 0px rgb(28, 27, 27);*/
-  height: 20vh;
+  min-height: 20vh;
   border-style:solid;
   border-color: rgb(252, 163, 17);
   /*border-color: rgb(255, 252, 247); */
-  grid-template-areas: "title img" "desc img";
+  grid-template-areas: 
+  "title img" 
+  "desc img"
+  "desc links";
 }
 
-/* properties for content titles */
+/* properties for project titles */
 .project-title{
   grid-area:title;
   align-self: center;
-  margin-left: 2vh;
+  text-align:center;
+  margin-top: 2vh;
 }
 
 /* places image on right side of each content grid */
 .project-img{
   grid-area:img;
   max-width: 20vh;
+  align-self:center;
 }
 
 /* properties for content descriptions */
 .project-description{
   grid-area:desc;
   justify-content: center;
-  margin-left: 1vw;
+  align-self:center;
+  margin: 2vh 2vw 2vh 2vw;
+}
+
+/* aligns links within description section of each content box */
+.project-links{
+  grid-area:links;
+  align-self: end;
+  max-width: 1fr;
   margin-right: 2vw;
+  margin-bottom: 2vh;
 }
 
 /* keep default cursor when hovering over paragraphs */
 p:hover{
   
-}
-
-/* aligns links within description section of each content box */
-.project-links{
-  grid-area:desc;
-  align-self: end;
-  max-width: fit-content;
-  margin-left: 10%;
-  margin-right: 2vw;
-  margin-bottom: 2vh;
-}
-
-/* About Page classes */
-.aboutme-body{
-  display:flex;
-  flex-direction:column;
-  margin-inline: 10vw;
-  margin-top: 5vh;
-  width:auto;
-  height:auto;
-  -webkit-user-select: none; /* Safari */        
-  -moz-user-select: none; /* Firefox */
-  -ms-user-select: none; /* IE10+/Edge */
-  user-select: none; /* Standard */
-
-}
-
-.aboutme{
-margin-inline: 10vw;
-margin-top: 2vh;
-width:auto;
-height:auto;
-text-indent: 20px;
-color:white;
-}
-
-/* Settings for small screens */
-@media only screen and (max-wdith:700px){
-
-}
-
-/*  2x? grid that holds boxes with links to projects*/
-.home-grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: 5vh;
-  column-gap: 10vh;
-
-  /* center project boxes*/
-  margin: 12.5vh 10vw 12.5vh 10vw;
-
 }

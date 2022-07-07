@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony's Portfolio</title>
     <link href="static/portfolio.css" rel="stylesheet">
+    <link href="static/home.css" rel="stylesheet">
     <!-- to user roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,8 +23,9 @@
 
     <!-- Banner-->
     <div class="main-banner">
-        <h1 style="font-size:5vw; margin-left: 4vw; margin-bottom: 5vh;"> Welcome! </h1>
-        <h2 style="font-size:2vw; margin-top: 1vh; margin-left: 4vw; margin-bottom: 5vh;">You have found Anthony's portfolio, check out what he's been up to!
+        <h1 style="margin-inline: auto;"> Welcome! </h1>
+        <h2 style="margin-top:2vh; margin-bottom:2vh; margin-inline: 15vw; text-align:center;">
+            You have found Anthony's portfolio, check out what he's been up to!
         </h2>
     </div>
     <!-- Links to works-->
@@ -33,33 +35,53 @@
         <!-- GPX Capstone-->
         <div class="main-content">
             <h3 class="project-title"> GPX Visualizer</h3>
-            <img src="static/imgs/logo_300.png" alt="Flowers" class="project-img">
+            <!-- src="static/imgs/logo_300.png"-->
+            <img src="static/imgs/logo_300.png" alt="GPX Logo" class="project-img">
             <p class="project-description">
                 A website that transforms GPX file data and Strava activity data into
                 customizable visualizations. I primarily contributed in creating the landing page, 
                 parameters page, and generated art page.
             </p>
-            <a href="https://gpxvis.com" class="project-links" target="_blank" rel="noopener noreferrer">
+            <a href="https://gpxvis.com" class="project-links" style="margin-right:50%" target="_blank" rel="noopener noreferrer">
                 View project
             </a>
-            <a href="https://github.com/joemuzina/Capstone" class="project-links" style="margin-left: 70%" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/joemuzina/Capstone" class="project-links" style="margin-left:50%" target="_blank" rel="noopener noreferrer">
                 Visit github
             </a>
         </div>
         <!-- Leetcode-->
         <div class="main-content">
-            <h3 style="grid-area:title;" class="project-title"> Leetcode solutions</h3>
-            <img style="grid-area:img;" src="static/imgs/leetcode.png" alt="Flowers" class="project-img">
-            <p style="grid-area:desc;" class="project-description">
+            <h3 class="project-title"> Leetcode - Grind 75</h3>
+            <!-- src="static/imgs/logo_300.png"-->
+            <img src="static/imgs/leetcode.png" alt="Leetcode Logo" class="project-img">
+            <p class="project-description">
                 Here I'm practising my skills by answering the Blind 75 Leetcode questions
             </p>
-            <a href="/solutions" class="project-links">
-                View Solutions
+            <a href="/solutions" class="project-links" style="margin-right:50%">
+                View solutions
             </a>
-            <a href="" class="project-links" style="margin-left: 70%">
+            <a href="" class="project-links" style="margin-left:50%" target="_blank" rel="noopener noreferrer">
                 Visit github
             </a>
         </div>
+        <!-- Descrambler -->
+        <div class="main-content">
+            <h3 class="project-title"> Descrambler</h3>
+            <!-- src="static/imgs/logo_300.png"-->
+            <img src="static/imgs/Descrambler.png" alt="Descrambler Logo" class="project-img">
+            <p class="project-description">
+                A small program that accepts a string of letters and outputs all english words
+                that can be made with any set of those letters. Originally on pythonanywhere.com,
+                I have now integrated this into this website.
+            </p>
+            <a href="/descrambler" class="project-links" style="margin-right:60%; text-align:center;">
+                Try it yourself
+            </a>
+            <a href="" class="project-links" style="margin-left:50%">
+                View on PA
+            </a>
+        </div>
+        
     </div>
 </body>
 
