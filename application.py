@@ -1,8 +1,10 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
+import json
 
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+
 db = SQLAlchemy(app)
 
 class Sort(db.Model):
@@ -11,6 +13,25 @@ class Sort(db.Model):
 
     def __repr__(self):
         return f"{self.key} - {self.words}"
+
+def populate():
+    new_line = '\n'
+    with open("dictionary.json",'r') as dict:
+        keys = json.load(dict)
+        for word in keys:
+            values = keys[word]
+            #print(f"word: {word} {new_line} keys[{word}] : {values}")
+            entry = Sort(key=word, words=keys[word])
+            #print(f"adding {entry}")
+            db.session.add(entry)
+        print(f"commiting all")
+        db.session.commit()
+
+checkEmpty = Sort.query.count()
+print(f"checking if db empty: {checkEmpty}")
+if (checkEmpty == 0):
+    print("adding to database")
+    populate()
 
 @app.route("/")
 def home():
@@ -25,12 +46,27 @@ def solutions():
     return render_template("solutions.html")
 
 @app.route("/descrambler")
+#Function takes url parameter from user input and populates
+#results using database query
 def descrambler():
-    return render_template("descrambler.html")
+    letterSet = request.args.get('sorted', default = '*')
+    #page with no search made
+    if letterSet == '*':
+        f"letter set is {letterSet}"
+        return render_template("descrambler.html")
+    #page with results from user input
+    else:
+        letterSet = ''.join(sorted(letterSet))
+        result = Sort.query.get(letterSet.upper())
+        print(f"results: {result}")
+        result = str(result).split( )
+        result.pop(0)
+        result.pop(0)
+        result = ' '.join(result)
+        print(f"search with key {letterSet} found: {result}")
+        return render_template("descrambler.html", possibleWords=result)
     
-@app.route("/descrambler/<key>")
-def descrambler_results(key):
-    results = Sort.query.get_or_404(key)
-    return {"key":results.key, "words": results.words}
+
+
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)

@@ -1,5 +1,3 @@
-descrambler.html
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,75 +13,50 @@ descrambler.html
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
 </head>
 
+
+
 <body>
     <!-- Nav Bar-->
     <div class="nav">
         <a href="/"> Home </a>
-        <a href=""> About </a>
+        <a href="/about"> About </a>
         <a href=""> Contact</a>
     </div>
 
-    <!-- Content-->
-    <div class="descrambler-grid">
-        <script>
-            
-            function loadFile(filePath) {
-                var result = null;
-                var xmlhttp = new XMLHttpRequest();
-                xmlhttp.open("GET", filePath, false);
-                xmlhttp.send();
-                if (xmlhttp.status == 200) {
-                    result = xmlhttp.responseText;
-                }
-                fillCategories(result);
-                //return result;
-            }
-
-            function fillCategories(contents) {
-                const collection = document.getElementsByClassName("category");
-                //iterate through category elements
-                //add title and solution links
-                for (var i = 0; i < collection.length; ++i){
-                    const cat = document.createElement('div');
-                    cat.classList.add('category-title')
-                    cat.textContent = "test";
-                    
-                    collection[i].appendChild(cat);
-                }
-
-                //element.textContent = contents;
-            }
-
-            function makeChild(cont) {
-                const cat = document.createElement('div');
-                cat.classList.add('category-title');
-                cat.textContent = cont;
-                const caat = document.getElementById('array');
-                caat.appendChild(cat);
-            }
-
-            window.onload = function() {
-                var cont = "hey";
-                makeChild(cont);
-                loadFile(solutions-topics.txt);
-            }
-        </script>
-        <div class="main-content">
-            <div class="descrambler-description">
-                <p> Enter letters to find words that can be made with some or all of them. Each letter is only used once</p>
-            </div>
-            <div class="descrambler-buttons">
-                <form action="/descrambler" method="GET">
-                    <input type="text" name="sorted" id="sorted" placeholder="Letters to descramble" minlength="2" maxlength="40" required>
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-            <div class="descrambler-results">
-
-            </div>
+    <!-- Banner-->
+    <div class="descrambler-banner">
+        <h2 style="margin: 2vh 4vw 2vh 4vw;">
+            Enter letters to find words that can be made with some or all of them. Each letter is only used once.
+        </h2>
+        <div class="descrambler-input">
+            <!-- return the function to keep its affects for more than a second
+            descrambleAPIreroute(event) 
+            onsubmit="return readDictionary(event)-->
+            <form >
+                <script>
+                    function descrambleAPIreroute(event){
+                        var element = document.getElementById("results");
+                        element.textContent = "test123";
+                        //returning false prevents submission and keeps text
+                        return false;
+                    }
+                </script>
+                
+                <input type="text" name="sorted" id="sorted" placeholder="Letters to descramble" minlength="2" maxlength="40" required style="min-width: 60vw;" autofocus >
+                <input type="submit">
+            </form>
+        </div>
+        <div class="descrambler-results">
         </div>
     </div>
-
+    <!-- Links to works-->
+    <!-- Row of latest content-->
+    <div class="descrambler-grid">
+        <!-- GPX Capstone-->
+        <div class="main-content">
+            <h3 style="color:white;"> results:</h3>
+            <p id="results" style="color:white;">{{possibleWords}}</p>
+        </div>
+    </div>
 </body>
-
 </html>
