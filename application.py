@@ -56,17 +56,30 @@ def descrambler():
         return render_template("descrambler.html")
     #page with results from user input
     else:
-        letterSet = ''.join(sorted(letterSet))
-        result = Sort.query.get(letterSet.upper())
-        print(f"results: {result}")
-        result = str(result).split( )
-        result.pop(0)
-        result.pop(0)
-        result = ' '.join(result)
-        print(f"search with key {letterSet} found: {result}")
-        return render_template("descrambler.html", possibleWords=result)
-    
+        letterSet = ''.join(sorted(letterSet.upper()))
+        isKey = Sort.query.filter_by(key=letterSet).first() is not None
+        if isKey == True:
+            result = Sort.query.filter_by(key=letterSet).first()
+            print(f"results: {result}")
+            result = str(result).split( )
+            result.pop(0)
+            result.pop(0)
+            result = ' '.join(result)
+            print(f"search with key {letterSet} found: {result}")
+            return render_template("descrambler.html", possibleWords=result)
+        else:
+            return render_template("descrambler.html", possibleWords="No words found")
 
+#this is 
+@app.route("/resources/aboutDescrambler.txt")    
+def test():
+    about = ""
+    with open("aboutDescrambler.txt","r") as file:
+        for lines in file:
+            #print(f"about = {about}")
+            about += lines 
+            #print(f"updated about = {about}")
+    return about
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)

@@ -59,7 +59,6 @@ a.category-links:link{
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  height: 37vh;
   background-color: rgb(229, 229, 229);
   border-inline: 0px;
   border-style: solid;
@@ -73,6 +72,10 @@ a.category-links:link{
   max-width: 80vw;
 }
 
+.descrambler-results{
+  
+}
+
 /*  2x? grid that holds boxes with links to categories*/
 .descrambler-grid{
   display:grid;
@@ -82,7 +85,7 @@ a.category-links:link{
   column-gap: 10vh;
 
   /* center category boxes*/
-  margin: 10vh 10vw 10vh 10vw;
+  margin: 5vh 10vw 10vh 10vw;
 
 }
 
@@ -147,6 +150,10 @@ p:hover{
   margin-bottom: 2vh;
 }
 
+#aboutDescrambler{
+  color:white;
+  margin-top: 3vh;
+}
 
 /* Settings for small screens 
 @media only screen and (max-wdith:700px){

@@ -26,7 +26,7 @@
     <!-- Banner-->
     <div class="descrambler-banner">
         <h2 style="margin: 2vh 4vw 2vh 4vw;">
-            Enter letters to find words that can be made with some or all of them. Each letter is only used once.
+            Enter letters to find words that can be made with some or all of them. Entering multiple of one letter will include words that use that letter multiple times.
         </h2>
         <div class="descrambler-input">
             <!-- return the function to keep its affects for more than a second
@@ -43,10 +43,12 @@
                 </script>
                 
                 <input type="text" name="sorted" id="sorted" placeholder="Letters to descramble" minlength="2" maxlength="40" required style="min-width: 60vw;" autofocus >
-                <input type="submit">
+                <input type="submit" value="Submit">
             </form>
         </div>
         <div class="descrambler-results">
+            <h3 style="margin: 2vh 4vw 2vh 4vw;"> results:</h3>
+            <p id="results" style="margin: 2vh 4vw 2vh 4vw;">{{possibleWords}}</p>
         </div>
     </div>
     <!-- Links to works-->
@@ -54,8 +56,20 @@
     <div class="descrambler-grid">
         <!-- GPX Capstone-->
         <div class="main-content">
-            <h3 style="color:white;"> results:</h3>
-            <p id="results" style="color:white;">{{possibleWords}}</p>
+            <h3 style="color:white;"> About this project</h3>
+            <p id="aboutDescrambler"></p>
+            <script>
+                //This script ac
+                text = document.getElementById('aboutDescrambler');
+                xhr = new XMLHttpRequest();
+                xhr.open("GET", "http://153.33.140.189:5000/resources/aboutDescrambler.txt");
+                xhr.send();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4)               //the readyState if the status of the request 
+                        text.innerHTML = xhr.responseText; // (http://www.w3schools.com/ajax/ajax_xmlhttprequest_onreadystatechange.asp)
+                    // 4 is a completed request
+                }
+            </script>
         </div>
     </div>
 </body>

@@ -1,0 +1,89 @@
+descrambler.html
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anthony's Portfolio</title>
+    <link href="static/home.css" rel="stylesheet">
+    <link href="static/descrambler.css" rel="stylesheet">
+    <!-- to user roboto font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Nav Bar-->
+    <div class="nav">
+        <a href="/"> Home </a>
+        <a href=""> About </a>
+        <a href=""> Contact</a>
+    </div>
+
+    <!-- Content-->
+    <div class="descrambler-grid">
+        <script>
+            
+            function loadFile(filePath) {
+                var result = null;
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.open("GET", filePath, false);
+                xmlhttp.send();
+                if (xmlhttp.status == 200) {
+                    result = xmlhttp.responseText;
+                }
+                fillCategories(result);
+                //return result;
+            }
+
+            function fillCategories(contents) {
+                const collection = document.getElementsByClassName("category");
+                //iterate through category elements
+                //add title and solution links
+                for (var i = 0; i < collection.length; ++i){
+                    const cat = document.createElement('div');
+                    cat.classList.add('category-title')
+                    cat.textContent = "test";
+                    
+                    collection[i].appendChild(cat);
+                }
+
+                //element.textContent = contents;
+            }
+
+            function makeChild(cont) {
+                const cat = document.createElement('div');
+                cat.classList.add('category-title');
+                cat.textContent = cont;
+                const caat = document.getElementById('array');
+                caat.appendChild(cat);
+            }
+
+            window.onload = function() {
+                var cont = "hey";
+                makeChild(cont);
+                loadFile(solutions-topics.txt);
+            }
+        </script>
+        <div class="main-content">
+            <div class="descrambler-description">
+                <p> Enter letters to find words that can be made with some or all of them. Each letter is only used once</p>
+            </div>
+            <div class="descrambler-buttons">
+                <form action="/descrambler" method="GET">
+                    <input type="text" name="sorted" id="sorted" placeholder="Letters to descramble" minlength="2" maxlength="40" required>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+            <div class="descrambler-results">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
