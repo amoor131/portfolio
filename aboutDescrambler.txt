@@ -22,6 +22,6 @@ Currently, when letters are submitted to the field, it changes the value of the 
 element named <i> sorted </i>. This change is reflected in the URL. When this page is
 loaded, Flask checks if sorted has any value besides empty. if it has a value, 
 my flask application will look for a key in the database equal to the value of sorted.
-if found, the value of that key will be returned to an element on the page.
+If found, the value of that key will be returned to an element on the page.
 If a key with that value can't be found, then there are no words that can be
 made from those letters, and the page will refect that.

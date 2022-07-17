@@ -1,0 +1,59 @@
+body{
+  height:110vh;
+}
+
+.aboutme-banner{
+  display:grid;
+  background-color: rgb(229, 229, 229);
+  border-inline: 0px;
+  border-style: solid;
+  border-color: rgb(252, 163, 17);
+  margin-bottom: 3vh;
+  grid-template-areas:
+  "title"
+  "image";
+}
+
+#aboutme-body{
+margin-inline: 5vw;
+}
+
+.aboutme{
+  color:white;
+}
+
+.aboutme-title{
+  grid-area:title;
+  font-size:40px;
+  text-align:center; 
+  align-self:center;
+  margin-top:3vh;
+}
+
+.aboutme-img{
+  grid-area:image;
+  max-width: 80vw;
+  justify-self:center;
+}
+
+@media (min-width:400px){
+  .aboutme-banner{
+    display:grid;
+    background-color: rgb(229, 229, 229);
+    border-inline: 0px;
+    border-style: solid;
+    border-color: rgb(252, 163, 17);
+    margin-bottom: 3vh;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "image title title";
+  }
+  .aboutme-title{
+    font-size:5vw;
+  }
+  .aboutme-img{
+    grid-area:image;
+    max-width: 20vw;
+    justify-self:center;
+  }
+}
