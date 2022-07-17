@@ -5,6 +5,7 @@
   border-inline: 0px;
   border-style: solid;
   border-color: rgb(252, 163, 17);
+  min-height: 15vh;
   margin-bottom: 3vh;
 }
 /* holds projects to link to on homepage */
@@ -12,8 +13,10 @@
   display:grid;
   grid-template-rows: 1fr 1fr;
   row-gap: 5vh;
-  /* center project boxes*/
-  margin: 1vh 2vw 3vh 2vw;
+  /* this is for when there are more than two content objects*/
+  /* margin: 1vh 2vw 3vh 2vw;*/
+  margin: 11vh 2vw 8vh 3vw;
+  justify-self:center;
 }
 /* grid for each project */
 /* has title, discription, picture, and links*/
