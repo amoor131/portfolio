@@ -63,7 +63,7 @@
                 //from a file rather than having the long description typed here
                 text = document.getElementById('aboutDescrambler');
                 xhr = new XMLHttpRequest();
-                xhr.open("GET", "http://amooreprojects/resources/aboutDescrambler.txt");
+                xhr.open("GET", "/resources/aboutDescrambler.txt");
                 xhr.send();
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState == 4)               //the readyState if the status of the request 
