@@ -7,7 +7,9 @@ user provides. The following is the process I decided on to make this project
 <br><br>
 &nbsp;&nbsp;&nbsp;&nbsp;
 I started with a 
-<a href="http://www.mieliestronk.com/wordlist.html" target="_blank" rel="noopener noreferrer"> <b>list</b> </a>
+    <a href="http://www.mieliestronk.com/wordlist.html" target="_blank" rel="noopener noreferrer"> 
+    <b>list</b> 
+    </a>
 of every english word. Then I wrote two python scripts to organize the words in one file from shortest to
 longest then alphabetically and longest to shortest then alphabetically in the other. 
 Then in another script I used a nested for loop to go through all 58,000 words longest to shortest and compare
