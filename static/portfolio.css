@@ -1,3 +1,4 @@
+/**/
 /* top welcome banner on home page*/
 .main-banner{
   display:grid;
@@ -56,7 +57,8 @@
 .project-description{
   grid-area:desc;
   justify-content: center;
-  align-self:center;
+  /*align-self:center;
+  margin-inline:2vw;*/
   margin: 2vh 2vw 2vh 2vw;
 }
 
@@ -73,5 +75,14 @@
 
 /* keep default cursor when hovering over paragraphs */
 p:hover{
-  
+  cursor:default;
+}
+
+@media (min-width:400px){
+  .project-title{
+    margin-top:3vh;
+  }
+  .project-description{   
+    margin: 5vh 2vw 2vh 2vw;
+  }
 }
