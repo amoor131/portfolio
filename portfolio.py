@@ -81,10 +81,16 @@ def test():
             #print(f"updated about = {about}")
     return about
 
-#render page for choice tracker sign-in
+#render page for choice tracker
 @app.route("/choicetracker")
-def CT():
+def choicetracker():
     return render_template("choicetracker.html")
+
+#temporary page while I figure out how to test if user is signed in
+#render page for choice tracker sign-in
+@app.route("/choicetrackersignin")
+def choicetrackersignin():
+    return render_template("choicetrackersignin.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)

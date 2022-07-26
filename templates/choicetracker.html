@@ -11,9 +11,51 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap" rel="stylesheet">
+    <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="choicetracker.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js" async></script>
 </head>
+<!--check if signed in or not-->
+<!--https://stackoverflow.com/a/50256404-->
+<script>
+    var auth2;
+var googleUser; // The current user
 
+gapi.load('auth2', function(){
+    auth2 = gapi.auth2.init({
+        client_id: 'your-app-id.apps.googleusercontent.com'
+    });
+    auth2.attachClickHandler('signin-button', {}, onSuccess, onFailure);
 
+    auth2.isSignedIn.listen(signinChanged);
+    auth2.currentUser.listen(userChanged); // This is what you use to listen for user changes
+});  
+
+var signinChanged = function (val) {
+    console.log('Signin state changed to ', val);
+};
+
+var onSuccess = function(user) {
+    console.log('Signed in as ' + user.getBasicProfile().getName());
+    // Redirect somewhere
+};
+
+var onFailure = function(error) {
+    console.log(error);
+};
+
+function signOut() {
+    auth2.signOut().then(function () {
+        console.log('User signed out.');
+    });
+}        
+
+var userChanged = function (user) {
+    if(user.getId()){
+      // Do something here
+    }
+};
+</script>
 
 <body>
     <!-- Nav Bar-->
