@@ -70,7 +70,7 @@ def descrambler():
         else:
             return render_template("descrambler.html", possibleWords="No words found")
 
-#this is 
+#this function lets me populate the /descrambler page with the contents of a file
 @app.route("/resources/aboutDescrambler.txt")    
 def test():
     about = ""
@@ -80,6 +80,11 @@ def test():
             about += lines 
             #print(f"updated about = {about}")
     return about
+
+#render page for choice tracker sign-in
+@app.route("/choicetracker")
+def CT():
+    return render_template("choicetracker.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)
