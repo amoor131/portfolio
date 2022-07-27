@@ -7,6 +7,7 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
 db = SQLAlchemy(app)
 
+#class for 
 class Sort(db.Model):
     key = db.Column(db.String(80), primary_key=True, unique=True, nullable=False)
     words = db.Column(db.String(26600))
@@ -46,8 +47,7 @@ def solutions():
     return render_template("solutions.html")
 
 @app.route("/descrambler")
-#Function takes url parameter from user input and populates
-#results using database query
+#Function gets url parameter SORTED and returns result of query for value where key = SORTED
 def descrambler():
     letterSet = request.args.get('sorted', default = '*')
     #page with no search made
@@ -90,7 +90,7 @@ def choicetracker():
 #render page for choice tracker sign-in
 @app.route("/choicetrackersignin")
 def choicetrackersignin():
-    return render_template("choicetrackersignin.html")
+    return render_template("choicetrackerSignin.html")
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)

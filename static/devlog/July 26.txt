@@ -1,0 +1,40 @@
+Today I spent my time working on my small project called Choice Tracker. When complete, this project will use NFC (near field communication) tags 
+in conjunction with my iPhone's Shortcuts app to track choices I make throughout my day. 
+Right now it's limited to tracking three types of decisions I make throughout my day but I have 
+plans for additional things I can track. Currently, those choices I'm tracking are classified as diciplined, impulsive, and maintenance. 
+Throughout my day, when I have the thought to start doing something unproductive, or catch myself being unproductive and have to decide to 
+start doing something productive again I take note of my choice and increment the proper category using my nfc tags.
+Personally, I have found this system not only makes me more likely to make a productive choice, but it makes me more aware of the moments
+when I have a choice. Now that I've covered the purpose of the project, I'd like to actually cover my technical plan.
+
+Most of my work today wasn't spent coding my project but understanding the details to how I'm going to implement users in my project.
+What I learned from my past project is that it is important to write down and flesh out how this project will work, what 
+technologies, languages, environments, and libraries I'll be using and how they all work together. I began this process yesterday and tentitively
+settled on this:
+	Users: google sign-in
+	store data: sql (sqlalchemy?)
+		tables: user: email, userID
+			entry: userID, date, choices
+	upload: automated through shortcuts?
+		
+	access: webpage
+	features: calendar, stats monthly/weekly/daily
+		how to make calendar: fullcalendar.io
+
+This gives me a pretty solid idea of what needs to be done. Questions I still have are:
+	should I use sqlalchemy for this? Wouldn't it be better practice to refamiliarize myself with actual sql?
+	can I associate the choices data that I want to upload with user's through shortcuts? Can I make my own API to interact with googles?
+
+
+Although part of me think it would be wise to investigate these remaining questions, it feels gross to spend so much time and not see tangable 
+progress to my projects, so I've first focused on implementing signing in to google on my website. My understanding of this process is guided by this video: https://youtu.be/Oy5F9h5JqEU
+
+First go to the google developer console https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjZzfyIxZf5AhVhq4kEHTD6CsMQFnoECAYQAQ&url=https%3A%2F%2Fconsole.developers.google.com%2F&usg=AOvVaw39ieEDI7pzBj4NtuzqS57M
+Then make a project and create an API key and OAuth2.0 CLIENT ID in the Credentials tab.
+Next, customize the OAuth consent screen
+
+Once that is done, we can add this code to the website https://developers.google.com/identity/sign-in/web
+
+For now, I don't know how to check if an authenticated user is signed in with google for my project, so I've made two seperate routes for this project,
+one being choicetracker and the other being choicetrackersignin. If I can figure it out I think it would be nicer to check for this in my portfolio.py
+within the choicetracker function and depending on the condition I can return the signin.html or the choicetracker.html file.
