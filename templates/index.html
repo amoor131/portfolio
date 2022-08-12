@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony's Portfolio</title>
-    <link href="static/home.css" rel="stylesheet">
-    <link href="static/portfolio.css" rel="stylesheet">
+    <link href="static/onepage.css" rel="stylesheet">
+    <link href="static/lookAndFeel.css" rel="stylesheet">
     
     <!-- <link href="static/home.css" rel="stylesheet"> -->
     <!-- to user roboto font-->
@@ -18,76 +18,96 @@
 
 <body>
     <!-- Nav Bar-->
-    <div class="nav">
-        <a href="/"> Home </a>
-        <a href="/about"> About </a>
-        <a href=""> Contact</a>
+    <div id="navbar">
+        <a href="/"> Top </a>
+        <a href="/#resume"> Resume </a>
+        <a href="/#projects"> Projects</a>
+        <a href="/#contact"> Contact</a>
     </div>
+    <!-- top name-->
+    <div id="name">
+        <p> ANTHONY MOORE</p>
+    </div>
+    
+    <!--  intro  -->
+    <div class="content-block" id>
+        <div id="intro-block" >
+            <div id="intro-title" style="justify-content: center;">
+                Software <br> and <br> web <br> developer
+            </div>
+            <div id="intro-links">
+                <img src="static/imgs/linkedin-logo.png" alt="Linkedin" href="https://www.linkedin.com/in/anthonymoorecs/">
+                <img src="static/imgs/github-logo.png" alt="github" href="https://github.com/amoor131">
+            </div>
+        </div>
+    </div>
+    <!--  resume  -->
+    <div class="content-block" id>
+        <div class="section-title" id="resume">
+            Resume
+        </div>
+        <div id="resume-document">
+            this is where my resume would be...IF I HAD ONE
+        </div>
+    </div>
+    <!--  projects  -->
+    <div class="content-block" id>
+        <div class="section-title" id="projects">
+            Projects
+        </div>
+        <div class="project-box">
+            <div class="project-title">
+                GPX Visualizer
+            </div>
+            <div class="project-description">
 
-    <!-- Banner-->
-    <div class="main-banner">
-        <h1 style="text-align:center; margin-top:3vh;"> Welcome! </h1>
-        <h2 style="margin-top:2vh; margin-bottom:3vh; margin-inline: 15vw; text-align:center;">
-            You've made it to my personal website. Take a look and see what I've been up to.
-        </h2>
+            </div>
+            <div class="project-demo-link">
+
+            </div>
+            <div class="project-code-link">
+
+            </div>
+        </div>
     </div>
-    <!-- Links to works-->
-    <!-- Row of latest content-->
-    <div class="home-grid">
-        <!-- GPX Capstone-->
-        <div class="main-content">
-            <h3 class="project-title"> GPX Visualizer</h3>
-            <!-- src="static/imgs/logo_300.png"-->
-            <img src="static/imgs/logo_300.png" alt="GPX Logo" class="project-img">
-            <p class="project-description">
-                A website that transforms GPX file data and Strava activity data into
-                customizable visualizations. I primarily contributed in creating the landing page, 
-                parameters page, and generated art page.
-            </p>
-            <a href="https://gpxvis.com" class="project-links" style="margin-right:60%" target="_blank" rel="noopener noreferrer">
-                View project
-            </a>
-            <a href="https://github.com/joemuzina/Capstone" class="project-links" style="margin-left:50%" target="_blank" rel="noopener noreferrer">
-                Visit github
-            </a>
+    <!--    -->
+    <div class="content-block" id>
+        <div class="section-title" id="contact">
+            Contact
         </div>
-        <!-- Descrambler -->
-        <div class="main-content">
-            <h3 class="project-title"> Descrambler</h3>
-            <!-- src="static/imgs/logo_300.png"-->
-            <img src="static/imgs/Descrambler.png" alt="Descrambler Logo" class="project-img">
-            <p class="project-description">
-                A small program that accepts a string of letters and outputs all english words
-                that can be made with any set of those letters. Originally on pythonanywhere.com,
-                I have now integrated this into this website.
-            </p>
-            <a href="/descrambler" class="project-links" style="margin-right:60%; text-align:center;">
-                Try it yourself
-            </a>
-            <a href="https://github.com/amoor131/descrambler" class="project-links" style="margin-left:50%" target="_blank" rel="noopener noreferrer">
-                View on github
-            </a>
-        </div>
-        <!-- Leetcode-->
-        <!--
-        <div class="main-content">
-            <h3 class="project-title"> Leetcode - Grind 75</h3>
-            <img src="static/imgs/leetcode.png" alt="Leetcode Logo" class="project-img">
-            <p class="project-description">
-                Here I'm practising my skills by answering the Blind 75 Leetcode questions
-            </p>
-            <a href="/solutions" class="project-links" style="margin-right:50%">
-                View solutions
-            </a>
-            <a href="" class="project-links" style="margin-left:50%" target="_blank" rel="noopener noreferrer">
-                Visit github
-            </a>
-        </div>
-        -->
     </div>
-    <p style="color: rgb(20, 33, 61);">
-        google-site-verification: google6a0a97c61cf169ef.html
-    </p>
+    <!--Sticky navbar-->
+    <!--from https://www.w3schools.com/howto/howto_js_navbar_sticky.asp-->
+    <script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function() {sticky()};
+        // Get the navbar
+        var navbar = document.getElementById("navbar");
+        var name = document.getElementById("name");
+        // Get the offset position of the navbar
+        var navbarSticky = navbar.offsetTop;
+        var nameSticky = name.offsetTop;
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function sticky() {
+            stickynav();
+            stickyname();
+        }
+        function stickynav() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+        function stickyname() {
+            if (window.pageYOffset >= sticky) {
+                name.classList.add("sticky")
+            } else {
+                name.classList.remove("sticky");
+            }
+        }
+    </script>
+
 </body>
 
 </html>

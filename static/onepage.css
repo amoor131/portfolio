@@ -1,0 +1,104 @@
+/* */
+.content-block{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 40vh;
+  margin-block: 5vh;
+}
+
+.section-title{
+  color: white;
+  font-size: 10vw;
+}
+
+#name{
+  display:flex;
+  justify-content:center;
+  color:white;
+  padding: 1vh 0vh 1vh 0vh;
+  background-color: rgb(20, 33, 61);
+  /*sticky*/
+  position:fixed;
+  top: 0;
+  width: 100%;
+}
+
+#intro{
+
+}
+
+#resume{
+}
+
+#projects{
+
+}
+
+#contact{
+
+}
+
+/* intro section*/
+#intro-block{
+  display:grid;
+  grid-template-areas:
+    "intro-title" 
+    "intro-links";
+  row-gap:2vh;
+  /*background-color: green; */
+}
+
+#intro-title{
+  text-align: center;
+  font-size: 10vw;
+  color: white;
+}
+
+#intro-links{
+  display:flex;
+  justify-content:space-around;
+}
+
+/* resume section*/
+#resume-document{
+
+}
+
+/* projects section*/
+.project-box{
+  display:grid;
+  grid-template-areas:
+    "project-title       project-title       project-title       project-title       project-title"
+    "project-description project-description project-description project-description project-demo-link"
+    "project-description project-description project-description project-description project-code-link";
+  background-color: green;
+}
+
+.project-title{
+  font-size: 5vw;
+  justify-content: center;
+  
+}
+
+.project-description{
+}
+
+.project-demo-link{
+  max-width: 5vw;
+}
+
+.project-code-link{
+  max-width: 5vw;
+}
+
+/* contact section*/
+
+#contact-links-box{
+
+}
+
+#contact-google-forms{
+
+}

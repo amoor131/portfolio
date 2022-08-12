@@ -15,6 +15,8 @@ class Sort(db.Model):
     def __repr__(self):
         return f"{self.key} - {self.words}"
 
+db.create_all()
+
 def populate():
     new_line = '\n'
     with open("dictionary.json",'r') as dict:
