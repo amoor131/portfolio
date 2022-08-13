@@ -2,31 +2,40 @@
 .content-block{
   display:flex;
   flex-direction: column;
-  justify-content: center;
+  /*justify-content: center;*/
   align-items: center;
   min-height: 40vh;
-  margin-block: 5vh;
+  margin-top:0vh;
+  padding-top:5vh;
+  /*offset titles for navbar anchors*/
+  
+  position:relative;
+  top: 5vh;
+
 }
 
 .section-title{
   color: white;
   font-size: 10vw;
+  
+  /*visibility:hidden;*/
 }
 
 #name{
   display:flex;
   justify-content:center;
   color:white;
-  padding: 1vh 0vh 1vh 0vh;
-  background-color: rgb(20, 33, 61);
+  padding: .5vh 0vh 1.5vh 0vh;
+  background-image: linear-gradient(0, rgba(20, 33, 61,0), rgba(20, 33, 61,1));
   /*sticky*/
   position:fixed;
   top: 0;
   width: 100%;
+  z-index:1;
 }
 
-#intro{
-
+#splash{
+  min-height:60vh;
 }
 
 #resume{
@@ -36,8 +45,18 @@
 
 }
 
-#contact{
+.contact{
+  margin-top:6vh;
+  min-height:80vh;
+  overflow:hidden;
+}
 
+.contact::-webkit-scrollbar{
+  display:none;
+}
+
+.contact::-webkit-scrollbar{
+  display:none;
 }
 
 /* intro section*/
@@ -46,7 +65,8 @@
   grid-template-areas:
     "intro-title" 
     "intro-links";
-  row-gap:2vh;
+  row-gap:3vh;
+  margin-top:10vh;
   /*background-color: green; */
 }
 
@@ -63,42 +83,85 @@
 
 /* resume section*/
 #resume-document{
-
+  max-width: 85vw;
+  margin-top: 2vh;
 }
+
 
 /* projects section*/
 .project-box{
   display:grid;
   grid-template-areas:
-    "project-title       project-title       project-title       project-title       project-title"
-    "project-description project-description project-description project-description project-demo-link"
-    "project-description project-description project-description project-description project-code-link";
-  background-color: green;
+  "title       title       title       title"
+  "description description description description"
+  "description description description description"
+  "demo        demo        code        code";
+  min-height:15vh;
+  max-width:90vw;
 }
 
 .project-title{
+  grid-area: title;
   font-size: 5vw;
-  justify-content: center;
-  
+  align-self:top;
+  text-align: center;
+  margin-top:2vh;
+  margin-bottom:1vh;
 }
 
 .project-description{
+  grid-area:description;
 }
 
 .project-demo-link{
-  max-width: 5vw;
+  grid-area:demo;
+  align-self:center;
+  justify-self:center;
+  text-align:center;
+  margin-block:1vh;
 }
 
 .project-code-link{
+  grid-area:code;
+  align-self:center;
+  justify-self:center;
+  text-align:center;
+}
+
+/*
+.project-demo-link{
+  grid-area:demo;
+  max-width: 5vw;
+  justify-content: center;
+  text-align:center;
+}
+
+.project-code-link{
+  grid-area:code;
   max-width: 5vw;
 }
+*/
 
 /* contact section*/
 
 #contact-links-box{
-
+  display:flex;
+  width:50%;
+  align-items:center;
+  justify-content:space-around;
+  margin-top:3vh;
 }
 
-#contact-google-forms{
+#contact-googleform{
+  overflow:hidden;
+}
 
+#contact-gf{
+  overflow-y:scroll;
+}
+
+#contact-email-box{
+  color: white;
+  margin-top:3vh;
+  margin-bottom:3vh;
 }

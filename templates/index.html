@@ -17,67 +17,122 @@
 </head>
 
 <body>
+    <!-- top name -->
+    <div id="name">
+        <p> ANTHONY MOORE</p>
+    </div>
     <!-- Nav Bar-->
     <div id="navbar">
-        <a href="/"> Top </a>
+        <a href="/#"> Top </a>
         <a href="/#resume"> Resume </a>
         <a href="/#projects"> Projects</a>
         <a href="/#contact"> Contact</a>
     </div>
-    <!-- top name-->
-    <div id="name">
-        <p> ANTHONY MOORE</p>
-    </div>
-    
     <!--  intro  -->
-    <div class="content-block" id>
+    <div class="content-block" id="splash">
         <div id="intro-block" >
             <div id="intro-title" style="justify-content: center;">
-                Software <br> and <br> web <br> developer
+                Software <br> and web <br> developer
             </div>
             <div id="intro-links">
-                <img src="static/imgs/linkedin-logo.png" alt="Linkedin" href="https://www.linkedin.com/in/anthonymoorecs/">
-                <img src="static/imgs/github-logo.png" alt="github" href="https://github.com/amoor131">
+                <a href="https://www.linkedin.com/in/anthonymoorecs/">
+                    <img src="static/imgs/linkedin-logo.png" alt="Linkedin">
+                </a>
+                <a href="https://github.com/amoor131">
+                    <img src="static/imgs/github-logo.png" alt="github">
+                </a>
             </div>
         </div>
     </div>
     <!--  resume  -->
-    <div class="content-block" id>
-        <div class="section-title" id="resume">
+    <div class="content-block" id="resume">
+        <div class="section-title">
             Resume
         </div>
+        
         <div id="resume-document">
-            this is where my resume would be...IF I HAD ONE
+            <a href="static/AnthonyMooreResume.pdf" download>
+                <img src="static/resumeImage.png" id="resume-document">
+            </a>
         </div>
+        
     </div>
     <!--  projects  -->
-    <div class="content-block" id>
-        <div class="section-title" id="projects">
+    <div class="content-block" id="projects">
+        <div class="section-title">
             Projects
         </div>
+        <!--GPX-->
         <div class="project-box">
             <div class="project-title">
                 GPX Visualizer
             </div>
             <div class="project-description">
-
+                A website that creates customizable visualizations using GPX file and Strava activity data. 
+                I primarily contributed in creating the landing page, parameters page, and generated art page.
             </div>
             <div class="project-demo-link">
-
+                <a href="gpxvis.com">
+                    Demo
+                </a>
             </div>
             <div class="project-code-link">
-
+                <a href="https://github.com/jmuzina/Capstone">
+                    Code
+                </a>
+            </div>
+        </div>
+        <!--Descrambler-->
+        <div class="project-box">
+            <div class="project-title">
+                Descrambler
+            </div>
+            <div class="project-description">
+                A small program that outputs all english words that can be made from letters its given. 
+                Originally on pythonanywhere.com, I have now integrated this into this website.
+            </div>
+            <div class="project-demo-link">
+                <a href="/descrambler">
+                    Demo
+                </a>
+            </div>
+            <div class="project-code-link">
+                <a href="https://github.com/amoor131/descrambler">
+                    Code
+                </a>
             </div>
         </div>
     </div>
-    <!--    -->
-    <div class="content-block" id>
-        <div class="section-title" id="contact">
-            Contact
+    <!--  Contact  -->
+    <div class="content-block" id="contact">
+        <div class="section-title">
+            Contact Me
+        </div>
+        <div id="contact-links-box">
+            <img src="static/imgs/linkedin-logo.png" alt="Linkedin" href="https://www.linkedin.com/in/anthonymoorecs/">
+            <img src="static/imgs/github-logo.png" alt="github" href="https://github.com/amoor131">
+        </div>
+        <!--from https://www.campaignmonitor.com/blog/email-marketing/how-to-create-an-html-form-that-emails-responses-to-your-inbox/-->
+        <div id="contact-googleform">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZ_t9tKCWDIOcTA1hfLsoU9NpL4Y1LeHeQNVfd8kHbVLIPmQ/viewform?embedded=true" 
+                    width="370" height="1250" frameborder="0" marginheight="0" marginwidth="0" id="contact-gf">Loading…
+            </iframe>
+            <!--
+            <form action="mailto:amoor131@kent.edu" method="POST" enctype="multipart/form-data" name="Portfolio-Contact-Submission">
+                Name:<br>
+                <input type="text" size="24" name="VisitorName"><br><br>
+
+                Message:<br> 
+                <textarea name="VisitorComment">
+                </textarea><br><br> 
+                <input type="submit" value="Submit">
+            </form>
+            -->
         </div>
     </div>
     <!--Sticky navbar-->
     <!--from https://www.w3schools.com/howto/howto_js_navbar_sticky.asp-->
+    <!--
     <script>
         // When the user scrolls the page, execute myFunction
         window.onscroll = function() {sticky()};
@@ -89,22 +144,26 @@
         var nameSticky = name.offsetTop;
         // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
         function sticky() {
-            stickynav();
-            stickyname();
-        }
-        function stickynav() {
-            if (window.pageYOffset >= sticky) {
-                navbar.classList.add("sticky")
+            if (window.pageYOffset >= navbarSticky) {
+                navbar.classList.add("stickyBot")
             } else {
-                navbar.classList.remove("sticky");
+                navbar.classList.remove("stickyBot");
+            }
+            if (window.pageYOffset >= nameSticky) {
+                name.classList.add("stickyTop")
+            } else {
+                name.classList.remove("stickyTop");
             }
         }
-        function stickyname() {
-            if (window.pageYOffset >= sticky) {
-                name.classList.add("sticky")
-            } else {
-                name.classList.remove("sticky");
-            }
+    </script>
+    -->
+
+    <!--scrolls to top of page-->
+    <!--from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp-->
+    <script>
+        function toTop(){
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
         }
     </script>
 

@@ -4,6 +4,7 @@ body{
   margin: auto;
   font-family: 'Roboto', sans-serif;
   background-color: rgb(20, 33, 61);
+  color:white;
 }
 
 /* navigation bar, duh */
@@ -18,12 +19,30 @@ body{
   color: rgb(252, 163, 17);
   background-color: rgb(20, 33, 61);
 
-  /*sticky*/
+  position:fixed;
+  bottom: 0;
+  width: 100%;
+
+  z-index:1;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.stickyTop{
+  position:fixed;
+  top: 0;
+  width: 100%;
+}
+
+.stickyBot{
   position:fixed;
   bottom: 0;
   width: 100%;
 }
-
 
 /* default no margin */
 h1, h2, h3, h4, h5, p, a{
@@ -45,7 +64,7 @@ a{
   text-decoration-line:none;
 }
 a:link{
-  color: white;
+  color: rgb(252, 163, 17);
 }
 /* change color of text when hovering over it */
 a:hover{
@@ -53,7 +72,7 @@ a:hover{
 }
 /* links look the same after visited*/
 a:visited{
-  color:white;
+  color:rgb(252, 163, 17);
 }
 
 /* links in home-content should be black */
@@ -66,11 +85,9 @@ a.project-links:hover{
 a.project-links:link{
   color: rgb(252, 163, 17);
 }
-
 a.nav{
   color:aqua;
 }
-
 @media (min-wdith:400px){
 
 }
