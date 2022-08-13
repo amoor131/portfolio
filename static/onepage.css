@@ -118,7 +118,7 @@
   align-self:center;
   justify-self:center;
   text-align:center;
-  margin-block:1vh;
+  margin-block:2vh;
 }
 
 .project-code-link{
@@ -150,6 +150,7 @@
   align-items:center;
   justify-content:space-around;
   margin-top:3vh;
+  margin-bottom:1vh;
 }
 
 #contact-googleform{

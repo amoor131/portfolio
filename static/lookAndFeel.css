@@ -15,6 +15,7 @@ body{
   justify-content: space-around;
   overflow:hidden;
   max-width: 100%;
+  min-height:7vh;
   height:5vh;
   color: rgb(252, 163, 17);
   background-color: rgb(20, 33, 61);
