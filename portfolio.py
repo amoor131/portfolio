@@ -40,6 +40,7 @@ if (checkEmpty == 0):
 def home():
     return render_template("index.html")
 
+'''
 @app.route("/about")
 def about():
     return render_template("about.html")
@@ -47,6 +48,7 @@ def about():
 @app.route("/solutions")
 def solutions():
     return render_template("solutions.html")
+'''
 
 @app.route("/descrambler")
 #Function gets url parameter SORTED and returns result of query for value where key = SORTED
@@ -83,6 +85,8 @@ def test():
             #print(f"updated about = {about}")
     return about
 
+
+'''
 #render page for choice tracker
 @app.route("/choicetracker")
 def choicetracker():
@@ -93,6 +97,6 @@ def choicetracker():
 @app.route("/choicetrackersignin")
 def choicetrackersignin():
     return render_template("choicetrackerSignin.html")
-
+'''
 if __name__ == "__main__":
     app.run(host='0.0.0.0', debug = True)

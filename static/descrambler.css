@@ -1,79 +1,20 @@
-/* makes divs on page flow downwards in order*/
-body{
-  display:flex;
-  flex-direction: column;
-  margin: auto;
-  font-family: 'Roboto', sans-serif;
-  background-color: rgb(20, 33, 61);
-}
-
-/* default no margin */
-h1, h2, h3, h4, h5, p, a{
-  margin:0px;
-}
-
-h1,h2{
-  pointer-events: none;
-}
-
-/* get rid of line under link */
-a{
-  text-decoration-line:none;
-}
-a:link{
-  color: white;
-}
-/* change color of text when hovering over it */
-a:hover{
-  color: rgb(252, 163, 17);
-}
-/* links look the same after visited*/
-a:visited{
-  color:white;
-}
-
-/* links in home-content should be black */
-a.category-links:visited{
-  color:black;
-}
-a.category-links:hover{
-  color: rgb(252, 163, 17);
-}
-a.category-links:link{
-  color: black;
-}
-
-.nav{
-  display:flex;
-  flex-wrap:wrap;
-  align-content: center;
-  justify-content: space-around;
-  max-width: 100%;
-  height:8vh;
-  color: white;
-}
-
 /* top welcome banner on home page*/
 .descrambler-banner{
   display:flex;
   flex-direction: column;
   justify-content: flex-start;
   width: 100%;
-  background-color: rgb(229, 229, 229);
+  min-height:45vh;
+  margin-top:15vh;
+  background-color: rgb(252, 163, 17);
   border-inline: 0px;
   border-style: solid;
-  border-color: rgb(252, 163, 17);
-
+  border-color: white;
 }
-
 
 .descrambler-input{
-  margin: 5vh 4vw 2vh 4vw;
+  margin: 2vh 4vw 2vh 4vw;
   max-width: 80vw;
-}
-
-.descrambler-results{
-  
 }
 
 /*  2x? grid that holds boxes with links to categories*/
@@ -87,6 +28,17 @@ a.category-links:link{
   /* center category boxes*/
   margin: 5vh 10vw 10vh 10vw;
 
+}
+
+#aboutproject{
+  margin-top:15vh;
+  text-align:center; 
+  font-size:5vw;
+}
+
+#aboutDescrambler{
+  color:white;
+  margin-top: 6vh;
 }
 
 .main-content-links{
@@ -135,11 +87,6 @@ a.category-links:link{
   margin-right: 2vw;
 }
 
-/* keep default cursor when hovering over paragraphs */
-p:hover{
-  
-}
-
 /* aligns links within description section of each content box */
 .category-links{
   grid-area:desc;
@@ -150,10 +97,6 @@ p:hover{
   margin-bottom: 2vh;
 }
 
-#aboutDescrambler{
-  color:white;
-  margin-top: 3vh;
-}
 
 /* Settings for small screens 
 @media only screen and (max-wdith:700px){

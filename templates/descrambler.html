@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony's Portfolio</title>
-    <link href="static/home.css" rel="stylesheet">
+    <link href="static/lookAndFeel.css" rel="stylesheet">
     <link href="static/descrambler.css" rel="stylesheet">
     <!-- to user roboto font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,17 +16,22 @@
 
 
 <body>
+    <!-- top name -->
+    <div id="name">
+        <p> ANTHONY MOORE</p>
+    </div>
     <!-- Nav Bar-->
-    <div class="nav">
-        <a href="/"> Home </a>
-        <a href="/about"> About </a>
-        <a href=""> Contact</a>
+    <div id="navbar">
+        <a href="/#"> Top </a>
+        <a href="/#resume"> Resume </a>
+        <a href="/#projects"> Projects</a>
+        <a href="/#contact"> Contact</a>
     </div>
 
     <!-- Banner-->
     <div class="descrambler-banner">
-        <h2 style="margin: 2vh 4vw 2vh 4vw;">
-            Enter letters to find words that can be made with some or all of them. Entering multiple of one letter will include words that use that letter multiple times.
+        <h2 style="margin: 4vh 4vw 2vh 4vw;">
+            Enter a string of characters to find the words that can be made with them.
         </h2>
         <div class="descrambler-input">
             <!-- return the function to keep its affects for more than a second
@@ -47,16 +52,13 @@
             </form>
         </div>
         <div class="descrambler-results">
-            <h3 style="margin: 2vh 4vw 2vh 4vw;"> results:</h3>
+            <h3 style="margin: 3vh 4vw 2vh 4vw;"> results:</h3>
             <p id="results" style="margin: 2vh 4vw 2vh 4vw;">{{possibleWords}}</p>
         </div>
     </div>
     <!-- Links to works-->
     <!-- Row of latest content-->
-    <div class="descrambler-grid">
-        <!-- GPX Capstone-->
-        <div class="main-content">
-            <h3 style="color:white;"> About this project</h3>
+    <h3 id="aboutproject"> About this project</h3>
             <p id="aboutDescrambler"></p>
             <script>
                 //This script lets me populate the part of the page that describes this project
@@ -71,7 +73,5 @@
                     // 4 is a completed request
                 }
             </script>
-        </div>
-    </div>
 </body>
 </html>
