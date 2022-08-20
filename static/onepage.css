@@ -53,7 +53,7 @@
     "intro-title" 
     "intro-links";
   row-gap:3vh;
-  margin-top:10vh;
+  margin:10vh auto auto auto;
   /*background-color: green; */
 }
 
