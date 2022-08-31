@@ -19,27 +19,32 @@
 <body>
     <!-- top name -->
     <div id="name">
-        <p> ANTHONY MOORE</p>
+        <p style="font-size:2vh;"> ANTHONY MOORE</p>
     </div>
     <!-- Nav Bar-->
     <div id="navbar">
-        <a href="/#"> Top </a>
-        <a href="/#resume"> Resume </a>
-        <a href="/#projects"> Projects</a>
-        <a href="/#contact"> Contact</a>
+        <a href="/#" class="nav-text"> Top </a>
+        <a href="/#resume" class="nav-text"> Resume </a>
+        <a href="/#projects" class="nav-text"> Projects</a>
+        <a href="/#contact" class="nav-text"> Contact</a>
     </div>
-    <!--  intro  -->
-    <div class="content-block" id="splash">
+    <!--  intro  --> <!-- style="padding-top:0vw;" -->
+    <div class="content-block" >
         <div id="intro-block" >
-            <div id="intro-title">
+            <!-- have to make 3 seperate titles. Won't center on safari for some reason if just one-->
+            <div class="intro-title">
                 software
+            </div>
+            <div class="intro-title">
                 <br>
                 and web
-                <br>
+            </div>
+            <div class="intro-title">
+                <br><br>
                 developer
             </div>
             <div id="intro-links">
-                <a href="https://www.linkedin.com/in/anthonymoorecs/">
+                <a href="https://www.linkedin.com/in/anthonymoorecs/" >
                     <img src="static/imgs/linkedin-logo.png" alt="Linkedin">
                 </a>
                 <a href="https://github.com/amoor131">
@@ -113,17 +118,22 @@
             Contact Me
         </div>
         <div id="contact-links-box">
-            <a href="https://www.linkedin.com/in/anthonymoorecs/">
+            <a href="https://www.linkedin.com/in/anthonymoorecs/" style="text-align:right; margin-right:5rem;">
                 <img src="static/imgs/linkedin-logo.png" alt="Linkedin">
             </a>
-            <a href="https://github.com/amoor131">
+            <a href="https://github.com/amoor131" style="margin-left:5rem;">
                 <img src="static/imgs/github-logo.png" alt="github">
             </a>
         </div>
         <!--from https://www.campaignmonitor.com/blog/email-marketing/how-to-create-an-html-form-that-emails-responses-to-your-inbox/-->
         <div id="contact-googleform">
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfZ_t9tKCWDIOcTA1hfLsoU9NpL4Y1LeHeQNVfd8kHbVLIPmQ/viewform?embedded=true" 
-                    width="370" height="1250" frameborder="0" marginheight="0" marginwidth="0" id="contact-gf">Loading…
+                    width="370"
+                    height="1250"
+                    frameborder="0"
+                    marginheight="0"
+                    marginwidth="0"
+                    id="contact-gf">Loading…
             </iframe>
             <!--
             <form action="mailto:amoor131@kent.edu" method="POST" enctype="multipart/form-data" name="Portfolio-Contact-Submission">

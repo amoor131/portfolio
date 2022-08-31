@@ -1,4 +1,9 @@
 /* */
+
+/* remove min height for zooming on desktop MODIFY MEDIA QUERY YOU DINGUS */
+
+/* VW used for mobile, overwritten with media queries */
+
 .content-block{
   display:flex;
   flex-direction: column;
@@ -25,13 +30,6 @@
   min-height:60vh;
 }
 
-#resume{
-}
-
-#projects{
-
-}
-
 .contact{
   margin-top:6vh;
   min-height:80vh;
@@ -50,20 +48,24 @@
 #intro-block{
   display:grid;
   grid-template-areas:
-    "intro-title" 
-    "intro-links";
+    "title"
+    "title"
+    "title"
+    "links";
   row-gap:3vh;
-  margin:10vh auto auto auto;
-  /*background-color: green; */
+  /* supposed to help with text not centering on safari browser*/
+  margin-top:0px;
 }
 
-#intro-title{
+.intro-title{
+  grid-area:title;
   text-align: center;
   font-size: 10vw;
   color: white;
 }
 
 #intro-links{
+  grid-area:links;
   display:flex;
   justify-content:space-around;
 }
@@ -157,21 +159,30 @@
 /* screens bigger than phones */
 @media screen and (min-width: 400px){
   .content-block{
+    min-width: 40rem;
+  }
+
+  .nav-text{
+    font-size:2vh;
+  }
+
+  .intro-title{
+    font-size: 10rem;
+  }
+
+  .content-block{
     padding-top:10vh;
   }
-
-  #intro-block{
-    margin-top:5vh;
-    /*background-color: green; */
-  }
-
+  
   #intro-title{
-    font-size: 8vw;
+    font-size: 8rem;
   }
+
+
 
   .section-title{
     color: white;
-    font-size: 8vw;
+    font-size: 8rem;
   }
 
   #resume-document{
@@ -185,11 +196,36 @@
   .project-title{
     margin-top:4vh;
     text-align:center;
-    font-size:5vw;
+    font-size:5rem;
   }
 
   .project-description{
     text-align:center;
   }
-}
 
+  .project-demo-link{
+    grid-area:demo;
+    text-align:right;
+    justify-self:auto;
+    margin-block:2vh;
+    margin-right:5rem;
+  }
+  
+  .project-code-link{
+    grid-area:code;
+    text-align:left;
+    justify-self:auto;
+    margin-block:2vh;
+    margin-left:5rem;
+  }
+
+  #contact-links-box{
+    display:grid;
+    width:50%;
+    grid-template-columns: 1fr 1fr;
+    align-items:auto;
+    justify-content:auto;
+    margin-top:3vh;
+    margin-bottom:1vh;
+  }
+}

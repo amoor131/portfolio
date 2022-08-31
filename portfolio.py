@@ -1,8 +1,9 @@
 from flask import Flask, render_template, request
-app = Flask(__name__)
 from flask_sqlalchemy import SQLAlchemy
 import json
-
+#from curses.ascii import isalpha #for addKey
+from addKeyDeps import isKey, fitsIn
+app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
 
 db = SQLAlchemy(app)
@@ -36,6 +37,30 @@ if (checkEmpty == 0):
     print("adding to database")
     populate()
 
+#adds new keys 
+def addKey(testKey):
+    print(f"testing key: {testKey}")
+    #used to add new lines to f statements
+    new_line = '\n'
+    #check that the entry is only letters
+    if testKey.isalpha() == False:
+        return -1
+    #double check that the user input isn't already a key in the database
+    if isKey(testKey):
+        return 0
+    #user input in reverse alphabetical order, 
+    sortedKey = ''.join(sorted(testKey.strip('\n')))
+    foundWords = ''
+    with open('sorted_length.txt','r') as engWords:
+        for word in engWords:
+            if fitsIn(word, testKey):
+                foundWords += ' ' + ''.join(word.strip('\n')) # not sure if I need to strip new line
+        if len(foundWords) > 0:
+            entry = Sort(key=testKey, words=foundWords)
+            db.session.add(entry)
+            db.session.commit()
+            return 1
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -60,19 +85,36 @@ def descrambler():
         return render_template("descrambler.html")
     #page with results from user input
     else:
+        #sorts user input alphabetically and sets to uppercase
         letterSet = ''.join(sorted(letterSet.upper()))
-        isKey = Sort.query.filter_by(key=letterSet).first() is not None
-        if isKey == True:
+        keyExists = Sort.query.filter_by(key=letterSet).first() is not None
+        if keyExists == True:
             result = Sort.query.filter_by(key=letterSet).first()
             print(f"results: {result}")
             result = str(result).split( )
             result.pop(0)
             result.pop(0)
             result = ' '.join(result)
-            print(f"search with key {letterSet} found: {result}")
+            print(f"search with key {letterSet} found: {result}") #DEBUG
             return render_template("descrambler.html", possibleWords=result)
         else:
-            return render_template("descrambler.html", possibleWords="No words found")
+            tryAddKey = addKey(letterSet)
+            match tryAddKey:
+                case 1:
+                    print(f"successfully added key {letterSet}")
+                    result = Sort.query.filter_by(key=letterSet).first()
+                    print(f"results: {result}")
+                    result = str(result).split( )
+                    result.pop(0)
+                    result.pop(0)
+                    result = ' '.join(result)
+                    return render_template("descrambler.html", possibleWords=result)
+                case 0:
+                    print(f"tried adding key {letterSet} but it already existed")#DEBUG
+                    return render_template("descrambler.html", possibleWords="No words found")
+                case -1:
+                    print(f"tried adding key {letterSet} but it contains non alphabet characters")
+                    return render_template("descrambler.html", possibleWords="No words found")
 
 #this function lets me populate the /descrambler page with the contents of a file
 @app.route("/resources/aboutDescrambler.txt")    
