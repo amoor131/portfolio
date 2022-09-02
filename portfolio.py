@@ -46,7 +46,7 @@ def addKey(testKey):
     if testKey.isalpha() == False:
         return -1
     #double check that the user input isn't already a key in the database
-    if isKey(testKey):
+    if testKey in descrambler.keys():
         return 0
     #user input in reverse alphabetical order, 
     sortedKey = ''.join(sorted(testKey.strip('\n')))

@@ -159,19 +159,12 @@
 /* screens bigger than phones */
 @media screen and (min-width: 400px){
   .content-block{
-    min-width: 40rem;
-  }
-
-  .nav-text{
-    font-size:2vh;
+    min-height: 0px;
+    padding-top:10vh;
   }
 
   .intro-title{
     font-size: 10rem;
-  }
-
-  .content-block{
-    padding-top:10vh;
   }
   
   #intro-title{
@@ -186,7 +179,11 @@
   }
 
   #resume-document{
-    max-width: 75vw;
+    max-width: 50vw;
+  }
+
+  #projects{
+    margin-bottom:5rem;
   }
 
   .project-box{

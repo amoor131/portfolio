@@ -38,7 +38,8 @@
 
 #aboutDescrambler{
   color:white;
-  margin-top: 6vh;
+  margin-top: 6rem;
+  margin-bottom:6rem;
 }
 
 .main-content-links{
@@ -98,8 +99,13 @@
 }
 
 
-/* Settings for small screens 
-@media only screen and (max-wdith:700px){
-
+/* Settings for large screens */
+@media only screen and (min-width:400px){
+  .descrambler-banner{
+    min-height:fit-content;
+  }
+  
+  #aboutproject{
+    font-size:5rem;
+  }
 }
-*/
