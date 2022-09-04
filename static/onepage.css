@@ -117,20 +117,6 @@
   text-align:center;
 }
 
-/*
-.project-demo-link{
-  grid-area:demo;
-  max-width: 5vw;
-  justify-content: center;
-  text-align:center;
-}
-
-.project-code-link{
-  grid-area:code;
-  max-width: 5vw;
-}
-*/
-
 /* contact section*/
 
 #contact-links-box{
@@ -163,15 +149,13 @@
     padding-top:10vh;
   }
 
+  #intro{
+    margin-bottom:10rem;
+  }
+
   .intro-title{
-    font-size: 10rem;
+    font-size: 7rem;
   }
-  
-  #intro-title{
-    font-size: 8rem;
-  }
-
-
 
   .section-title{
     color: white;
