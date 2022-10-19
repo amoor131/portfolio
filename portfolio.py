@@ -4,7 +4,7 @@ import json
 #from curses.ascii import isalpha #for addKey
 from addKeyDeps import isKey, fitsIn
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///data.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///descrambler.db'
 
 db = SQLAlchemy(app)
 
@@ -37,7 +37,8 @@ if (checkEmpty == 0):
     print("adding to database")
     populate()
 
-#adds new keys 
+#called in descrambler function
+#adds new key
 def addKey(testKey):
     print(f"testing key: {testKey}")
     #used to add new lines to f statements
@@ -45,9 +46,6 @@ def addKey(testKey):
     #check that the entry is only letters
     if testKey.isalpha() == False:
         return -1
-    #double check that the user input isn't already a key in the database
-    if testKey in descrambler.keys():
-        return 0
     #user input in reverse alphabetical order, 
     sortedKey = ''.join(sorted(testKey.strip('\n')))
     foundWords = ''
@@ -87,6 +85,7 @@ def descrambler():
     else:
         #sorts user input alphabetically and sets to uppercase
         letterSet = ''.join(sorted(letterSet.upper()))
+        #find if this key exists
         keyExists = Sort.query.filter_by(key=letterSet).first() is not None
         if keyExists == True:
             result = Sort.query.filter_by(key=letterSet).first()
@@ -127,6 +126,10 @@ def test():
             #print(f"updated about = {about}")
     return about
 
+
+@app.route("/grid")
+def grid():
+    return render_template("grid.html")
 
 '''
 #render page for choice tracker
