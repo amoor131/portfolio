@@ -24,49 +24,26 @@
     <!-- Nav Bar-->
     <div id="navbar">
         <a href="/#" class="nav-text"> Top </a>
-        <a href="/#resume" class="nav-text"> Resume </a>
         <a href="/#projects" class="nav-text"> Projects</a>
+        <a href="/#resume" class="nav-text"> Resume</a>
         <a href="/#contact" class="nav-text"> Contact</a>
     </div>
-    <!--  intro  -->
-    <div class="content-block" id="intro">
-        <div id="intro-block" >
-            <!-- have to make 3 seperate titles. Won't center on safari for some reason if just one-->
-            <div class="intro-title">
-                software
-            </div>
-            <div class="intro-title">
-                <br>
-                and web
-            </div>
-            <div class="intro-title">
-                <br><br>
-                developer
-            </div>
-            <div id="intro-links">
-                <a href="https://www.linkedin.com/in/anthonymoorecs/" >
-                    <img src="static/imgs/linkedin-logo.png" alt="Linkedin">
-                </a>
-                <a href="https://github.com/amoor131">
-                    <img src="static/imgs/github-logo.png" alt="github">
-                </a>
-            </div>
-        </div>
+
+    <!--  welcome  -->
+    <div class="content-block" id="welcome-block">
+        <h1 id="welcome-title"> Oh, Hey! <br> Welcome to my site </h1>
+        <img src="static/imgs/Anthony-Sitting.png" id="AntSitting">
     </div>
-    <!--  resume  -->
-    <!--  resume id only used for navigation  -->
-    <div class="content-block" id="resume">
-        <div class="section-title">
-            Resume
-        </div>
-        
-        <div id="resume-document">
-            <a href="static/AnthonyMooreResume.pdf" download>
-                <img src="static/imgs/resumeImage.PNG" id="resume-document">
-            </a>
-        </div>
-        
+    
+    <!--  About  -->
+    <div class="content-block" id="about-summary">
+        <p class="content-text">I'm Anthony Moore. I recently graduated with a BS in computer science and have been focusing on gaining experience with web applications to broaded my ability to make useful and widely accessable programs. </p>
     </div>
+    <div class="content-block" id="about-paragraph">
+        <p class="content-text">Since graduating from Kent State University, I've been gaining experience and knowledge on web developement to increase the reach of my projects. I've enjoyed the mix of complex problem solving with visual and creative work that I've seen
+            in web developement. When I'm not contributing to new personal projects, I'm often spending my time painting, listening to music, playing on my ukulele, or going on walks when Ohio's weather permits it.</p>
+    </div>
+    
     <!--  projects  -->
     <div class="content-block" id="projects">
         <div class="section-title">
@@ -77,7 +54,7 @@
             <div class="project-title">
                 GPX Visualizer
             </div>
-            <div class="project-description">
+            <div class="project-description content-text">
                 A website that creates customizable visualizations using GPX file and Strava activity data. 
                 I primarily contributed in creating the landing page, parameters page, and generated art page.
             </div>
@@ -97,7 +74,7 @@
             <div class="project-title">
                 Descrambler
             </div>
-            <div class="project-description">
+            <div class="project-description content-text">
                 A small program that outputs all english words that can be made from letters its given. 
                 Originally on pythonanywhere.com, I have now integrated this into this website.
             </div>
@@ -113,6 +90,22 @@
             </div>
         </div>
     </div>
+
+    <!--  resume  -->
+    <!--  resume id only used for navigation  -->
+    <div class="content-block" id="resume">
+        <div class="section-title">
+            Resume
+        </div>
+        
+        <div id="resume-document">
+            <a href="static/AnthonyMooreResume.pdf" download>
+                <img src="static/imgs/resumeImage.PNG" id="resume-document">
+            </a>
+        </div>
+        
+    </div>
+
     <!--  Contact  -->
     <div class="content-block" id="contact">
         <div class="section-title">

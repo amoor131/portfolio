@@ -1,35 +1,22 @@
 /* */
 
-/* remove min height for zooming on desktop MODIFY MEDIA QUERY */
+/* remove min height for zooming on desktop MODIFY MEDIA QUERY YOU DINGUS */
 
 /* VW used for mobile, overwritten with media queries */
 
-/* basic sections of the website */
 .content-block{
   display:flex;
   flex-direction: column;
   /*justify-content: center;*/
   align-items: center;
-  min-height: 20vh;
-  background-color: #2b4162;
-  margin-top:25vh;
+  min-height: 40vh;
+  margin-top:0vh;
+  padding-top:5vh;
   /*offset titles for navbar anchors*/
+  
   position:relative;
   top: 5vh;
-  box-shadow: 3px 3px 3px black, -3px 3px 3px black, 3px -3px 3px black, -3px -3px 3px black;
-}
 
-/*these rules make content alternate between coming from left or right*/
-.content-block:nth-child(even){
-  margin-right:12vw;
-  border-top-right-radius: 25px;
-  border-bottom-right-radius: 25px;
-}
-
-.content-block:nth-child(odd){
-  margin-left:12vw;
-  border-top-left-radius: 25px;
-  border-bottom-left-radius: 25px;
 }
 
 .section-title{
@@ -43,49 +30,54 @@
   min-height:60vh;
 }
 
-/* welcome section*/
-#welcome-block{
-  min-height:30vh;
-  /* supposed to help with text not centering on safari browser*/
-  margin-top:10vh;
+.contact{
+  margin-top:6vh;
+  min-height:80vh;
+  overflow:hidden;
 }
 
-#welcome-title{
-  margin-left:42vw;
-  margin-top:5vh;
+.contact::-webkit-scrollbar{
+  display:none;
+}
+
+.contact::-webkit-scrollbar{
+  display:none;
+}
+
+/* intro section*/
+#intro-block{
+  display:grid;
+  grid-template-areas:
+    "title"
+    "title"
+    "title"
+    "links";
+  row-gap:3vh;
+  /* supposed to help with text not centering on safari browser*/
+  margin-top:0px;
+}
+
+.intro-title{
+  grid-area:title;
+  text-align: center;
   font-size: 10vw;
   color: white;
 }
 
-#welcome-links{
+#intro-links{
   grid-area:links;
   display:flex;
   justify-content:space-around;
 }
 
-#AntSitting{
-  height:auto;
-  width: 40vw;
-  position:absolute;
-  top:2vh;
-  left:4vw;
-  border-color:red;
-  border-radius: 5px;
+/* resume section*/
+#resume-document{
+  max-width: 85vw;
+  margin-top: 2vh;
 }
 
-/* About me section*/
-#about-summary{
-  margin-top: 25vh;
-}
-#about-paragraph{
-  margin-top: 10vh;
-}
 
 /* projects section*/
-#projects{
-  margin-top:10vh;
-}
-
 .project-box{
   display:grid;
   grid-template-areas:
@@ -125,24 +117,7 @@
   text-align:center;
 }
 
-/* resume section */
-#resume{
-  margin-top:15vh;
-}
-
-#resume-document{
-  max-width: 80vw;
-  margin-top:1vh;
-  margin-bottom: 1vh;
-}
-
-/* contact section */
-
-#contact{
-  margin-top:15vh;
-  min-height:40vh;
-  overflow:hidden;
-}
+/* contact section*/
 
 #contact-links-box{
   display:flex;
@@ -151,10 +126,6 @@
   justify-content:space-around;
   margin-top:3vh;
   margin-bottom:1vh;
-}
-
-.contact::-webkit-scrollbar{
-  display:none;
 }
 
 #contact-googleform{
@@ -178,11 +149,11 @@
     padding-top:10vh;
   }
 
-  #welcome-block{
+  #intro{
     margin-bottom:10rem;
   }
 
-  .welcome-title{
+  .intro-title{
     font-size: 7rem;
   }
 

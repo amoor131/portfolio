@@ -3,8 +3,8 @@ body{
   flex-direction: column;
   margin: auto;
   font-family: 'Roboto', sans-serif;
-  background-color: rgb(20, 33, 61);
-  color:white;
+  background-color: #FFF;
+  color:#e0e0e2;
 }
 
 /* navigation bar, duh */
@@ -18,7 +18,7 @@ body{
   min-height:7vh;
   height:5vh;
   color: rgb(252, 163, 17);
-  background-color: rgb(20, 33, 61);
+  background-color: #2b4162; /* rgb(20, 33, 61); */
 
   position:fixed;
   bottom: 0;
@@ -71,11 +71,9 @@ h1,h2{
   pointer-events: none;
 }
 
-/* 
-p{
-  font-size: 14;
+.content-text{
+  margin: 2vh 5vw 2vh 5vw;
 }
-*/
 
 /* get rid of line under link */
 a{
