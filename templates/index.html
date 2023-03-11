@@ -17,130 +17,55 @@
 </head>
 
 <body>
-    <!-- top name -->
-    <div id="name">
-        <p style="font-size:2vh;"> ANTHONY MOORE</p>
-    </div>
-    <!-- Nav Bar-->
-    <div id="navbar">
-        <a href="/#" class="nav-text"> Top </a>
-        <a href="/#projects" class="nav-text"> Projects</a>
-        <a href="/#resume" class="nav-text"> Resume</a>
-        <a href="/#contact" class="nav-text"> Contact</a>
-    </div>
+    <!-- top nav -->
+    <nav>
+        <h3> Anthony Moore </h3>
+        <div id="headerLinks">
+            <a href="https://www.ampersanthony.com"> Journal Website </a>
+            <a href="/descrambler"> Descrambler </a>
+            <a href="/https://gpxvis.com"> GPX Visualizer </a>
+        </div>
+    </nav>
+    <!-- banner -->
+    <header id="mainHeader">
+        <!-- title | content | button -->
+        <div>
+            <h1> Welcome to my virtual resume </h1>
+            <p> I'm a Kent State University graduate with a Bachelor's of Science in computer science seeking a role as a full stack developer </p>
+            <a> Contact me</a>
+        </div>
+        <!-- image -->
+        <i>
 
-    <!--  welcome  -->
-    <div class="content-block" id="welcome-block">
-        <h1 id="welcome-title"> Oh, Hey! <br> Welcome to my site </h1>
-        <img src="static/imgs/Anthony-Sitting.png" id="AntSitting">
+        </i>
+    </header>
+    <!-- title | three projects | descriptions -->
+    <div> <!-- direction column ? -->
+        <h2> Recent projects </h2>
+        <div>
+            <i id="OnlineJournal" src=""> </i>
+            <i id="Descrambler" src=""> </i>
+            <i id="gpxvis" src=""> </i>
+        </div>
     </div>
     
-    <!--  About  -->
-    <div class="content-block" id="about-summary">
-        <p class="content-text">I'm Anthony Moore. I recently graduated with a BS in computer science and have been focusing on gaining experience with web applications to broaded my ability to make useful and widely accessable programs. </p>
-    </div>
-    <div class="content-block" id="about-paragraph">
-        <p class="content-text">Since graduating from Kent State University, I've been gaining experience and knowledge on web developement to increase the reach of my projects. I've enjoyed the mix of complex problem solving with visual and creative work that I've seen
-            in web developement. When I'm not contributing to new personal projects, I'm often spending my time painting, listening to music, playing on my ukulele, or going on walks when Ohio's weather permits it.</p>
-    </div>
-    
-    <!--  projects  -->
-    <div class="content-block" id="projects">
-        <div class="section-title">
-            Projects
-        </div>
-        <!--GPX-->
-        <div class="project-box">
-            <div class="project-title">
-                GPX Visualizer
-            </div>
-            <div class="project-description content-text">
-                A website that creates customizable visualizations using GPX file and Strava activity data. 
-                I primarily contributed in creating the landing page, parameters page, and generated art page.
-            </div>
-            <div class="project-demo-link">
-                <a href="https://gpxvis.com">
-                    Demo
-                </a>
-            </div>
-            <div class="project-code-link">
-                <a href="https://github.com/jmuzina/Capstone">
-                    Code
-                </a>
-            </div>
-        </div>
-        <!--Descrambler-->
-        <div class="project-box">
-            <div class="project-title">
-                Descrambler
-            </div>
-            <div class="project-description content-text">
-                A small program that outputs all english words that can be made from letters its given. 
-                Originally on pythonanywhere.com, I have now integrated this into this website.
-            </div>
-            <div class="project-demo-link">
-                <a href="/descrambler">
-                    Demo
-                </a>
-            </div>
-            <div class="project-code-link">
-                <a href="https://github.com/amoor131/descrambler">
-                    Code
-                </a>
-            </div>
-        </div>
+    <!-- text section -->
+    <div>
+        <p> This is where I would place a quote from a superior that really appreciated my attitude and work</p>
+        <p> - Their name</p>
     </div>
 
-    <!--  resume  -->
-    <!--  resume id only used for navigation  -->
-    <div class="content-block" id="resume">
-        <div class="section-title">
-            Resume
-        </div>
-        
-        <div id="resume-document">
-            <a href="static/AnthonyMooreResume.pdf" download>
-                <img src="static/imgs/resumeImage.PNG" id="resume-document">
-            </a>
-        </div>
-        
+    <!-- call to action -->
+    <div>
+        <h4> I'd love to be a part of your team</h4>
+        <p> Don't be shy, shoot me an email. I'll be excited to hear from you</p>
+        <a> Contact me</a>
     </div>
 
-    <!--  Contact  -->
-    <div class="content-block" id="contact">
-        <div class="section-title">
-            Contact Me
-        </div>
-        <div id="contact-links-box">
-            <a href="https://www.linkedin.com/in/anthonymoorecs/" style="text-align:right; margin-right:5rem;">
-                <img src="static/imgs/linkedin-logo.png" alt="Linkedin">
-            </a>
-            <a href="https://github.com/amoor131" style="margin-left:5rem;">
-                <img src="static/imgs/github-logo.png" alt="github">
-            </a>
-        </div>
-        <div id="contact-googleform">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdqCdcgb8XCk2E7wsX2t3RADGs5Z8NcLysH1kYScGISEYTvlw/viewform?embedded=true" 
-                width="370" 
-                height="1250" 
-                frameborder="0" 
-                marginheight="0" 
-                marginwidth="0">
-                Loading…
-            </iframe>
-            
-        </div>
-    </div>
+    <!-- footer -->
+    <footer>
 
-    <!--scrolls to top of page-->
-    <!--from https://www.w3schools.com/howto/howto_js_scroll_to_top.asp-->
-    <script>
-        function toTop(){
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-
+    </footer>
 </body>
 
 </html>
