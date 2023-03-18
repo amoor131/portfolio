@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Anthony's Portfolio</title>
-    <link href="static/onepage.css" rel="stylesheet">
-    <link href="static/lookAndFeel.css" rel="stylesheet">
+    <link href="static/index.css" rel="stylesheet">
     
     <!-- <link href="static/home.css" rel="stylesheet"> -->
     <!-- to user roboto font-->
@@ -18,54 +17,64 @@
 
 <body>
     <!-- top nav -->
-    <nav>
-        <h3> Anthony Moore </h3>
-        <div id="headerLinks">
+    <div id="topnav">
+        <h3 id="name"> Anthony Moore </h3>
+        <div class="headerButtons">
             <a href="https://www.ampersanthony.com"> Journal Website </a>
             <a href="/descrambler"> Descrambler </a>
-            <a href="/https://gpxvis.com"> GPX Visualizer </a>
+            <a href="https://gpxvis.com"> GPX Visualizer </a>
         </div>
-    </nav>
-    <!-- banner -->
-    <header id="mainHeader">
+    </div>
+    <!-- main -->
+    <div id="main">
         <!-- title | content | button -->
         <div>
             <h1> Welcome to my virtual resume </h1>
-            <p> I'm a Kent State University graduate with a Bachelor's of Science in computer science seeking a role as a full stack developer </p>
-            <a> Contact me</a>
+            <p> I'm a Kent State University graduate with a Bachelor's of Science in computer science seeking a role as
+                a full stack developer </p>
+            <a class="contactMe"> Contact me</a>
         </div>
         <!-- image -->
         <i>
 
         </i>
-    </header>
-    <!-- title | three projects | descriptions -->
-    <div> <!-- direction column ? -->
-        <h2> Recent projects </h2>
-        <div>
-            <i id="OnlineJournal" src=""> </i>
-            <i id="Descrambler" src=""> </i>
-            <i id="gpxvis" src=""> </i>
+    </div>
+        <!-- title | three projects | descriptions -->
+        <div id="recentProjects"> <!-- direction column ? -->
+            <h2> Recent projects </h2>
+            <div class="images">
+                <div class="photoPair">
+                    <img id="OnlineJournal" class="picture" src="/static/imgs/spring.jpg"> </img>
+                    <span > This is a spring</span>
+                </div>
+                <div class="photoPair">
+                    <img id="Descrambler" class="picture" src="/static/imgs/tennis.jpg"> </img>
+                <span> This is a ball</span>
+                </div>
+                <div class="photoPair">
+                    <img id="gpxvis" class="picture" src="/static/imgs/snow.jpg"> </img>
+                <span> This is a slope</span>
+                </div>
+            </div>
         </div>
-    </div>
+        
+        <!-- text section -->
+        <div class="quoteSection">
+            <p class="quote"> This is where I would place a quote from a manager that really appreciated my attitude and work ethic</p>
+            <p class="quotePerson"> - Their name</p>
+        </div>
     
-    <!-- text section -->
-    <div>
-        <p> This is where I would place a quote from a superior that really appreciated my attitude and work</p>
-        <p> - Their name</p>
-    </div>
-
-    <!-- call to action -->
-    <div>
-        <h4> I'd love to be a part of your team</h4>
-        <p> Don't be shy, shoot me an email. I'll be excited to hear from you</p>
-        <a> Contact me</a>
-    </div>
-
-    <!-- footer -->
-    <footer>
-
-    </footer>
+        <!-- call to action -->
+        <div>
+            <h4> I'd love to be a part of your team</h4>
+            <p> Don't be shy, shoot me an email. I'll be excited to hear from you</p>
+            <a class="contactMe"> Contact me</a>
+        </div>
+    
+        <!-- footer -->
+        <footer>
+    
+        </footer>
 </body>
 
 </html>
